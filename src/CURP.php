@@ -119,10 +119,7 @@ class CURP
     public function getSexo()
     {
         $sexo = substr($this->curp, 10, 1);
-        if (in_array($sexo, [SexosInterface::HOMBRE, SexosInterface::MUJER])) {
-            return $sexo;
-        }
-        return false;
+        return SexosEnum::fromValue($sexo);
     }
 
     public function getFechaNacimiento()
@@ -141,7 +138,8 @@ class CURP
 
     public function getEntidadFederativa()
     {
-        return substr($this->curp, 11, 2);
+        $entfed = substr($this->curp, 11, 2);
+        return EntidadesFederativasEnum::fromValue($entfed);
     }
 
     public function esApellido1Valido(string $apellido1)
@@ -199,11 +197,11 @@ class CURP
     public function esNombreValido(string $nombre)
     {
         $nombre = static::normalizarCadena($nombre);
-        switch ($this->getSexo()) {
-            case SexosInterface::HOMBRE:
+        switch ($this->getSexo()->getValue()) {
+            case SexosEnum::HOMBRE:
                 $nombre = preg_replace('/^(JOSE|J\.?)\s/', '', $nombre);
                 break;
-            case SexosInterface::MUJER:
+            case SexosEnum::MUJER:
                 $nombre = preg_replace('/^(MARIA|MA?\.?)\s/', '', $nombre);
                 break;
         }

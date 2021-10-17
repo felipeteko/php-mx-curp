@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b0c0d741f599609bf47f65e64726ac9",
-    "packages": [],
+    "content-hash": "fad19b3a491bd109e7670957653fa9dd",
+    "packages": [
+        {
+            "name": "francerz/enum",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/francerz/php-enum.git",
+                "reference": "cfd0554a882d2f9aafab8131b130e3e2fd2b2c6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/francerz/php-enum/zipball/cfd0554a882d2f9aafab8131b130e3e2fd2b2c6b",
+                "reference": "cfd0554a882d2f9aafab8131b130e3e2fd2b2c6b",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Francerz\\Enum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Francerz",
+                    "email": "francerzam@hotmail.com"
+                }
+            ],
+            "description": "PHP Enumeration tool",
+            "support": {
+                "issues": "https://github.com/francerz/php-enum/issues",
+                "source": "https://github.com/francerz/php-enum/tree/v0.1.0"
+            },
+            "time": "2021-10-17T20:49:19+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",

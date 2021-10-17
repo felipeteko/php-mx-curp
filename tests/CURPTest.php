@@ -4,8 +4,8 @@ namespace Francerz\MX_CURP\Tests;
 
 use DateTimeImmutable;
 use Francerz\MX_CURP\CURP;
-use Francerz\MX_CURP\EntidadesFederativasInterface;
-use Francerz\MX_CURP\SexosInterface;
+use Francerz\MX_CURP\EntidadesFederativasEnum;
+use Francerz\MX_CURP\SexosEnum;
 use PHPUnit\Framework\TestCase;
 
 class CURPTest extends TestCase
@@ -54,14 +54,14 @@ class CURPTest extends TestCase
     {
         $curp = new CURP('PERJ911109HCMRDN05');
         $this->assertTrue($curp->esValida());
-        $this->assertEquals(SexosInterface::HOMBRE, $curp->getSexo());
+        $this->assertTrue($curp->getSexo()->is(SexosEnum::HOMBRE));
         $this->assertTrue($curp->esNombreValido('Juan'));
         $this->assertTrue($curp->esApellido1Valido('Pérez'));
         $this->assertTrue($curp->esApellido1Valido('Preciado'));
         $this->assertTrue($curp->esApellido2Valido('Rodríguez'));
         $this->assertTrue($curp->esApellido2Valido('Ruedas'));
+        $this->assertTrue($curp->getEntidadFederativa()->is(EntidadesFederativasEnum::COLIMA));
         $this->assertEquals(new DateTimeImmutable('1991-11-09'), $curp->getFechaNacimiento());
-        $this->assertEquals(EntidadesFederativasInterface::COLIMA, $curp->getEntidadFederativa());
         $this->assertFalse($curp->esNombreValido('Javier'));
         $this->assertFalse($curp->esNombreValido('Antonio'));
         $this->assertFalse($curp->esApellido1Valido('Parada'));
@@ -69,27 +69,27 @@ class CURPTest extends TestCase
 
         $curp = new CURP('GORG871016MMNNMD00');
         $this->assertTrue($curp->esValida());
-        $this->assertEquals(SexosInterface::MUJER, $curp->getSexo());
+        $this->assertTrue($curp->getSexo()->is(SexosEnum::MUJER));
         $this->assertTrue($curp->esNombreValido('Guadalupe'));
         $this->assertTrue($curp->esApellido1Valido('González'));
         $this->assertTrue($curp->esApellido2Valido('Ramírez'));
+        $this->assertTrue($curp->getEntidadFederativa()->is(EntidadesFederativasEnum::MICHOACAN));
         $this->assertEquals(new DateTimeImmutable('1987-10-16'), $curp->getFechaNacimiento());
-        $this->assertEquals(EntidadesFederativasInterface::MICHOACAN, $curp->getEntidadFederativa());
 
         $curp = new CURP('TOSR750518HSLRLS05');
         $this->assertTrue($curp->esValida());
-        $this->assertEquals(SexosInterface::HOMBRE, $curp->getSexo());
+        $this->assertTrue($curp->getSexo()->is(SexosEnum::HOMBRE));
         $this->assertTrue($curp->esNombreValido('José del Rosario'));
         $this->assertTrue($curp->esNombreValido('J. del Rosario'));
         $this->assertTrue($curp->esNombreValido('J del Rosario'));
         $this->assertTrue($curp->esApellido1Valido('del Toro'));
         $this->assertTrue($curp->esApellido2Valido('Da Silva'));
+        $this->assertTrue($curp->getEntidadFederativa()->is(EntidadesFederativasEnum::SINALOA));
         $this->assertEquals(new DateTimeImmutable('1975-05-18'), $curp->getFechaNacimiento());
-        $this->assertEquals(EntidadesFederativasInterface::SINALOA, $curp->getEntidadFederativa());
 
         $curp = new CURP('MOPA030227MCCRLNA4');
         $this->assertTrue($curp->esValida());
-        $this->assertEquals(SexosInterface::MUJER, $curp->getSexo());
+        $this->assertTrue($curp->getSexo()->is(SexosEnum::MUJER));
         $this->assertTrue($curp->esNombreValido('María de los Ángeles'));
         $this->assertTrue($curp->esNombreValido('Ma. de los Ángeles'));
         $this->assertTrue($curp->esNombreValido('Ma de los Ángeles'));
@@ -97,23 +97,23 @@ class CURPTest extends TestCase
         $this->assertTrue($curp->esNombreValido('M de los Ángeles'));
         $this->assertTrue($curp->esApellido1Valido('de la Mora'));
         $this->assertTrue($curp->esApellido2Valido('del Pilar'));
+        $this->assertTrue($curp->getEntidadFederativa()->is(EntidadesFederativasEnum::CAMPECHE));
         $this->assertEquals(new DateTimeImmutable('2003-02-27'), $curp->getFechaNacimiento());
-        $this->assertEquals(EntidadesFederativasInterface::CAMPECHE, $curp->getEntidadFederativa());
 
         $curp = new CURP('AAAM000000HAAAAR00');
-        $this->assertEquals(SexosInterface::HOMBRE, $curp->getSexo());
+        $this->assertTrue($curp->getSexo()->is(SexosEnum::HOMBRE));
         $this->assertTrue($curp->esNombreValido('José María'));
 
         $curp = new CURP('AAAJ000000MAAAAS00');
-        $this->assertEquals(SexosInterface::MUJER, $curp->getSexo());
+        $this->assertTrue($curp->getSexo()->is(SexosEnum::MUJER));
         $this->assertTrue($curp->esNombreValido('María José'));
 
         $curp = new CURP('AAAJ000000HAAAAS00');
-        $this->assertEquals(SexosInterface::HOMBRE, $curp->getSexo());
+        $this->assertTrue($curp->getSexo()->is(SexosEnum::HOMBRE));
         $this->assertTrue($curp->esNombreValido('José'));
 
         $curp = new CURP('AAAM000000MAAAAR00');
-        $this->assertEquals(SexosInterface::MUJER, $curp->getSexo());
+        $this->assertTrue($curp->getSexo()->is(SexosEnum::MUJER));
         $this->assertTrue($curp->esNombreValido('María'));
 
         $curp = new CURP('ZXZA000000MAAXXA00');

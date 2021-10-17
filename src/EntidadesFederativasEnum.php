@@ -2,7 +2,9 @@
 
 namespace Francerz\MX_CURP;
 
-interface EntidadesFederativasInterface
+use Francerz\Enum\AbstractEnum;
+
+final class EntidadesFederativasEnum extends AbstractEnum
 {
     public const AGUASCALIENTES = "AS";
     public const BAJA_CALIFORNIA = "BC";

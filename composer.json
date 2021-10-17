@@ -16,5 +16,7 @@
             "name": "Francerz"
         }
     ],
-    "require": {}
+    "require": {
+        "francerz/enum": "^0.1.0"
+    }
 }

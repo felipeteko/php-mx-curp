@@ -19,8 +19,8 @@ Utilización
 ```php
 
 use Francerz\MX_CURP\CURP;
-use Francerz\MX_CURP\EntidadesFederativasInterface;
-use Francerz\MX_CURP\SexosInterface;
+use Francerz\MX_CURP\EntidadesFederativasEnum;
+use Francerz\MX_CURP\SexosEnum;
 
 $curp = new CURP('PERJ911109HCMRDN05');
 
@@ -48,10 +48,10 @@ echo $fechaNacimiento->format(DateTimeInterface::W3C) . PHP_EOL;
     Obtiene el valor representativo del sexo
 */
 switch ($curp->getSexo()) {
-    case SexosInterface::HOMBRE:
+    case SexosEnum::HOMBRE:
         echo "Es HOMBRE" . PHP_EOL;
         break;
-    case SexosInterface::MUJER:
+    case SexosEnum::MUJER:
         echo "Es MUJER" . PHP_EOL;
         break;
 }
@@ -61,16 +61,16 @@ switch ($curp->getSexo()) {
     Obtiene los dígitos característicos de la entidad federativa de nacimiento.
 */
 switch ($curp->getEntidadFederativa()) {
-    case EntidadesFederativasInterface::AGUASCALIENTES:
+    case EntidadesFederativasEnum::AGUASCALIENTES:
         echo "Nació en Aguascalientes." . PHP_EOL;
         break;
-    case EntidadesFederativasInterface::COLIMA:
+    case EntidadesFederativasEnum::COLIMA:
         echo "Nació en Colima." . PHP_EOL;
         break;
-    case EntidadesFederativasInterface::ZACATECAS:
+    case EntidadesFederativasEnum::ZACATECAS:
         echo "Nació en Zacatecas." . PHP_EOL;
         break;
-    case EntidadesFederativasInterface::NACIDO_EXTRANJERO:
+    case EntidadesFederativasEnum::NACIDO_EXTRANJERO:
         echo "Nació en el Extranjero." . PHP_EOL;
         break;
 }
