@@ -1,0 +1,20 @@
+{
+    "name": "francerz/mx-curp",
+    "description": "Herramientas para CURP de Mexico",
+    "type": "library",
+    "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Francerz\\MX_CURP\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Francerz"
+        }
+    ],
+    "require": {}
+}
