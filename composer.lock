@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "francerz/enum",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/francerz/php-enum.git",
-                "reference": "cfd0554a882d2f9aafab8131b130e3e2fd2b2c6b"
+                "reference": "02ccd3dc0b2aebd94db0e297430c8a71d5acba8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/francerz/php-enum/zipball/cfd0554a882d2f9aafab8131b130e3e2fd2b2c6b",
-                "reference": "cfd0554a882d2f9aafab8131b130e3e2fd2b2c6b",
+                "url": "https://api.github.com/repos/francerz/php-enum/zipball/02ccd3dc0b2aebd94db0e297430c8a71d5acba8b",
+                "reference": "02ccd3dc0b2aebd94db0e297430c8a71d5acba8b",
                 "shasum": ""
             },
             "require-dev": {
@@ -42,9 +42,9 @@
             "description": "PHP Enumeration tool",
             "support": {
                 "issues": "https://github.com/francerz/php-enum/issues",
-                "source": "https://github.com/francerz/php-enum/tree/v0.1.0"
+                "source": "https://github.com/francerz/php-enum/tree/v0.1.1"
             },
-            "time": "2021-10-17T20:49:19+00:00"
+            "time": "2021-10-18T14:08:19+00:00"
         }
     ],
     "packages-dev": [

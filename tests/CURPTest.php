@@ -132,6 +132,14 @@ class CURPTest extends TestCase
         $this->assertTrue($curp->esApellido1Valido('Ñique'));
         $this->assertTrue($curp->esApellido2Valido('Ñique'));
 
+        $curp = new CURP('XXSA000000MAAXNL00');
+        $this->assertTrue($curp->esApellido1Valido(''));
+        $this->assertTrue($curp->esApellido2Valido('Sánchez'));
+
+        $curp = new CURP('MOXA000000HAARXL00');
+        $this->assertTrue($curp->esApellido1Valido('Moreno'));
+        $this->assertTrue($curp->esApellido2Valido(''));
+
         $curp = new CURP('BXCA000000HAAZNR00');
         $this->assertFalse(CURP::hasPalabraInconveniente((string)$curp));
         $this->assertTrue($curp->esApellido1Valido('Baeza'));
