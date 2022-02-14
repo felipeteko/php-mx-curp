@@ -107,7 +107,7 @@ class CURP
     public function esValida()
     {
         $match = preg_match(static::PATTERN_REGEXP, $this->curp);
-        if ($match == false) {
+        if ($match === false) {
             return false;
         }
         if (static::hasPalabraInconveniente($this->curp)) {
@@ -120,6 +120,19 @@ class CURP
     {
         $sexo = substr($this->curp, 10, 1);
         return SexosEnum::fromValue($sexo);
+    }
+
+    public function getSexoISO()
+    {
+        $sexo = substr($this->curp, 10, 1);
+        switch ($sexo) {
+            case 'H':
+                return 1;
+            case 'M':
+                return 2;
+            default:
+                return 0;
+        }
     }
 
     public function getFechaNacimiento()
