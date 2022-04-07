@@ -52,6 +52,13 @@ class CURPTest extends TestCase
     }
     public function testCurp()
     {
+        // echo "AAAAA " . CURP::calcularUltimoDigito('LACS720605MCMRBG06') . " AAAAAA";
+
+        $curp = new CURP('GABO040830HCMRRSAO');
+        $this->assertFalse($curp->esValida());
+        $curp = new CURP('GABO040830HCMRRSA0');
+        $this->assertTrue($curp->esValida());
+
         $curp = new CURP('PERJ911109HCMRDN05');
         $this->assertTrue($curp->esValida());
         $this->assertTrue($curp->getSexo()->is(SexosEnum::HOMBRE));

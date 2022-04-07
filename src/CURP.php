@@ -6,7 +6,7 @@ use DateTimeImmutable;
 
 class CURP
 {
-    public const PATTERN_REGEXP = '/^[A-Z]{4}[0-9]{6}(H|M)[A-Z]{5}.[0-9]$/';
+    public const PATTERN_REGEXP = '/^[A-Z]{4}[0-9]{6}(H|M)[A-Z]{5}[A-Z0-9][0-9]$/';
 
     private const IGNORAR_REGEXP = '/\\b(DAS|DA|DEL|DER|DE|DIE|DI|DD|LAS|LA|LOS|EL|LES|LE|MAC|MC|VAN|VON|Y)\\b/';
     private const CHARS = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
@@ -59,7 +59,7 @@ class CURP
 
     public static function verificarUltimoDigito(string $curp)
     {
-        $actual = static::calcularUltimoDigito($curp);
+        $actual = (string)static::calcularUltimoDigito($curp);
         $expected = substr($curp, 17, 1);
         return $actual == $expected;
     }
@@ -107,7 +107,7 @@ class CURP
     public function esValida()
     {
         $match = preg_match(static::PATTERN_REGEXP, $this->curp);
-        if ($match === false) {
+        if ($match == false) {
             return false;
         }
         if (static::hasPalabraInconveniente($this->curp)) {
