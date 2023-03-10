@@ -27,7 +27,7 @@ final class EntidadesFederativasEnum extends AbstractEnum
     public const NUEVO_LEON = "NL";
     public const OAXACA = "OC";
     public const PUEBLA = "PL";
-    public const QUERETARO = "QO";
+    public const QUERETARO = "QT";
     public const QUINTANA_ROO = "QR";
     public const SAN_LUIS_POTOSI = "SP";
     public const SINALOA = "SL";
