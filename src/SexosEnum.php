@@ -8,4 +8,5 @@ final class SexosEnum extends AbstractEnum
 {
     public const HOMBRE = 'H';
     public const MUJER = 'M';
+    PUBLIC const NO_BINARIO = 'X';
 }

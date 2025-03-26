@@ -6,7 +6,7 @@ use DateTimeImmutable;
 
 class CURP
 {
-    public const PATTERN_REGEXP = '/^[A-Z]{4}[0-9]{6}(H|M)[A-Z]{5}[A-Z0-9][0-9]$/';
+    public const PATTERN_REGEXP = '/^[A-Z]{4}[0-9]{6}(H|M|X)[A-Z]{5}[A-Z0-9][0-9]$/';
 
     private const IGNORAR_REGEXP = '/\\b(DAS|DA|DEL|DER|DE|DIE|DI|DD|LAS|LA|LOS|EL|LES|LE|MAC|MC|VAN|VON|Y)\\b/';
     private const CHARS = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
@@ -130,6 +130,8 @@ class CURP
                 return 1;
             case 'M':
                 return 2;
+            case 'X':
+                return 3;
             default:
                 return 0;
         }

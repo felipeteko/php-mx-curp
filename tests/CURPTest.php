@@ -58,6 +58,8 @@ class CURPTest extends TestCase
         $this->assertFalse($curp->esValida());
         $curp = new CURP('GABO040830HCMRRSA0');
         $this->assertTrue($curp->esValida());
+        $curp = new CURP('VIRA800730XJCDYB06');
+        $this->assertTrue($curp->esValida());
 
         $curp = new CURP('PERJ911109HCMRDN05');
         $this->assertTrue($curp->esValida());
@@ -122,6 +124,10 @@ class CURPTest extends TestCase
         $curp = new CURP('AAAM000000MAAAAR00');
         $this->assertTrue($curp->getSexo()->is(SexosEnum::MUJER));
         $this->assertTrue($curp->esNombreValido('María'));
+
+        $curp = new CURP('VIRA800730XJCDYB06');
+        $this->assertTrue($curp->getSexo()->is(SexosEnum::NO_BINARIO));
+        $this->assertTrue($curp->esNombreValido('Abdel'));
 
         $curp = new CURP('ZXZA000000MAAXXA00');
         $this->assertTrue($curp->esApellido1Valido('Z Flores'));

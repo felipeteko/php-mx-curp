@@ -1,5 +1,5 @@
 {
-    "name": "francerz/mx-curp",
+    "name": "felipteko/mx-curp",
     "description": "Herramientas para CURP de Mexico",
     "type": "library",
     "license": "MIT",
@@ -14,6 +14,9 @@
     "authors": [
         {
             "name": "Francerz"
+        },
+        {
+            "name": "Felipe Moreno"
         }
     ],
     "require": {
