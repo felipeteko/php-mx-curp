@@ -10,7 +10,7 @@ Instalación
 La instalación se puede realizar mediante [composer](https://getcomposer.org).
 
 ```sh
-composer require francerz/mx-curp
+composer require felipeteko/mx-curp
 ```
 
 Utilización
