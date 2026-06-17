@@ -12,7 +12,7 @@ class CURP
     private const CHARS = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 
     private const INCONVENIENTES = [
-        'BACA', 'BAKA', 'BUEI', 'BUEY', 'CACA', 'CACO', 'CAGA', 'CAGO',
+        'BUEI', 'BUEY', 'CACA', 'CACO', 'CAGA', 'CAGO', 'WUEI', 'WUEY',
         'CAKA', 'CAKO', 'COGE', 'COGI', 'COJA', 'COJE', 'COJI', 'COJO',
         'COLA', 'CULO', 'FALO', 'FETO', 'GETA', 'GUEI', 'GUEY', 'JETA',
         'JOTO', 'KACA', 'KACO', 'KAGA', 'KAGO', 'KAKA', 'KAGO', 'KAKA',
@@ -21,8 +21,7 @@ class CURP
         'MEAR', 'MEAS', 'MEON', 'MIAR', 'MION', 'MOCO', 'MOKO', 'MULA',
         'MULO', 'NACA', 'NACO', 'PEDA', 'PEDO', 'PENE', 'PIPI', 'PITO',
         'POPO', 'PUTA', 'PUTO', 'QULO', 'RATA', 'ROBA', 'ROBE', 'ROBO',
-        'RUIN', 'SENO', 'TETA', 'VACA', 'VAGA', 'VAGO', 'VAKA', 'VUEI',
-        'VUEY', 'WUEI', 'WUEY'
+        'RUIN', 'SENO', 'TETA', 'VAGA', 'VAGO', 'VAKA', 'VUEI', 'VUEY'
     ];
 
     private $curp;
